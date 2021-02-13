@@ -14,6 +14,7 @@ export class AppComponent {
   porcentaje = 0.234;
   salario = 12345;
   fecha = new Date();
+  activar = true;
   idioma = 'es';
   isCapitalizado = true;
   videoUrl = 'https://www.youtube.com/embed/5qap5aO4i9A';

@@ -34,8 +34,8 @@
                         Capitalizado con variable por defecto. ({{ isCapitalizado }})
                         <br />
                         <a class="btn btn-primary" (click)="isCapitalizado = !isCapitalizado">
-              Cambiar
-            </a>
+                            Cambiar
+                        </a>
                     </td>
                     <td>{{ nombre2 | capitalizado: isCapitalizado }}</td>
                     <td>
@@ -200,15 +200,28 @@
                         Cambiar el idioma. El idioma debe registrarse antes de poder ser usado.
                     </td>
                 </tr>
+
+                <tr>
+                    <td>{{ nombre }}</td>
+                    <td>
+                        Contraseña : {{ activar }}
+                        <button type="button" class="btn btn-outline-primary" (click)="activar = !activar">
+                            Activar/Desactivar
+                        </button>
+                    </td>
+                    <td>{{ nombre | ofuscar : activar}}</td>
+                    <td>Pipe personalizado para ofuscar contraseña en UI.</td>
+                </tr>
             </tbody>
         </table>
 
         <h3 class="mt-10">
             Slice: 5:20 en *ng-for <br />
             <small>
-        Mostrar elementos desde la pisición 5 hasta la posición 20.
-      </small>
+                Mostrar elementos desde la pisición 5 hasta la posición 20.
+            </small>
         </h3>
+        <hr />
         <ul>
             <li *ngFor="let item of arreglo | slice: 5:20">{{ item }}</li>
         </ul>
@@ -218,36 +231,26 @@
         <h3>
             JSON <br />
             <small>
-        Muestra un objeto en su representación json. Si no se plica quedaría
-        como "{{ heroe }}".</small
-      >
-    </h3>
-    <hr />
-    <div class="row mb-5">
-      <div class="col">
-        <pre>
-                  {{ heroe | json }}
-                </pre
-        >
-      </div>
+                Muestra un objeto en su representación json. Si no se plica quedaría
+                como "{{ heroe }}".
+            </small>
+        </h3>
+        <hr />
+        <div class="row mb-5">
+            <div class="col">
+                <pre> {{ heroe | json }} </pre>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
 <h3 class="mt-4">
-  <h3>Domseguro <br /></h3>
-  <hr />
-  <div class="row mb-5">
-    <div class="col">
-      <iframe
-        width="560"
-        height="315"
-        [src]="videoUrl | domSeguro"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      >
-      </iframe>
+    <h3> Domseguro <br /> <small> Pipe personalizado para poder mostrar una URL. Angular no deja injectar URLs en el código por defecto. </small></h3>
+    <hr />
+    <div class="row mb-5">
+        <div class="col">
+            <iframe width="560" height="315" [src]="videoUrl | domSeguro" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </div>
     </div>
-  </div>
 </h3>
